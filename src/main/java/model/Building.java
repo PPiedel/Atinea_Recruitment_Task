@@ -1,12 +1,12 @@
 package model;
 
-public class Poster {
-    private int height;
+public class Building {
     private int width;
+    private int height;
 
-    public Poster(int height, int width) {
-        this.height = height;
+    public Building(int width, int height) {
         this.width = width;
+        this.height = height;
     }
 
     public int getHeight() {
