@@ -1,7 +1,9 @@
 package algorithm;
 
-import model.Building;
+
 import org.junit.Test;
+
+import javax.swing.*;
 
 import static org.junit.Assert.assertEquals;
 
@@ -19,9 +21,10 @@ public class PainterTest {
         };
 
         //when
-        Painter painter = new Painter(buildings);
+        Painter painter = new Painter();
+        int minimalAmountOfPosters = painter.getMinimalAmountOfPosters(buildings);
 
         //then
-        assertEquals(4, painter.getMinimalAmountOfPosters());
+        assertEquals(4, minimalAmountOfPosters);
     }
 }
