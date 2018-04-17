@@ -4,6 +4,7 @@ import java.io.*;
 import java.util.Scanner;
 
 public final class Util {
+    public static final String OUTPUT_FILE_NAME = "pla.out";
 
     private Util() { }
 
@@ -34,5 +35,28 @@ public final class Util {
         }
 
         return buildings;
+    }
+
+    public static void writeResultToFile(int result){
+        BufferedWriter writer = null;
+        try {
+            writer = new BufferedWriter(new FileWriter(OUTPUT_FILE_NAME));
+            writer.write(String.valueOf(result));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        finally {
+            tryToCloseWriter(writer);
+        }
+    }
+
+    private static void tryToCloseWriter(BufferedWriter writer) {
+        if(writer!=null){
+            try {
+                writer.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }
