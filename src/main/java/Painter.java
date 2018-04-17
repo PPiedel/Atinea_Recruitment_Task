@@ -6,15 +6,15 @@ public class Painter {
 
     public int getMinimalAmountOfPosters(Building[] buildings) {
         int minimalAmountOfPosters = 0;
-        Deque<Building> posterStack = new ArrayDeque<>();
+        Deque<Building> buildingStack = new ArrayDeque<>();
 
-        for (Building currentPoster : buildings) {
-            while (!posterStack.isEmpty() && posterStack.getFirst().getHeight() > currentPoster.getHeight()) {
-                posterStack.removeFirst();
+        for (Building currentBuilding : buildings) {
+            while (!buildingStack.isEmpty() && buildingStack.getFirst().getHeight() > currentBuilding.getHeight()) {
+                buildingStack.removeFirst();
             }
 
-            if (posterStack.isEmpty() || posterStack.getFirst().getHeight() < currentPoster.getHeight()) {
-                posterStack.addFirst(currentPoster);
+            if (buildingStack.isEmpty() || buildingStack.getFirst().getHeight() < currentBuilding.getHeight()) {
+                buildingStack.addFirst(currentBuilding);
                 minimalAmountOfPosters++;
             }
         }

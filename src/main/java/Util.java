@@ -1,6 +1,7 @@
-
-
-import java.io.*;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 
 public final class Util {
@@ -27,7 +28,7 @@ public final class Util {
                 line++;
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("File pla.in not found.");
         } finally {
             if (scanner != null) {
                 scanner.close();
