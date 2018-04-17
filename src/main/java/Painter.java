@@ -1,19 +1,10 @@
-package algorithm;
-
-import model.Building;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
 
-public final class Painter {
+public class Painter {
 
-    private final Building[] buildings;
-
-    public Painter(Building[] buildings) {
-        this.buildings = buildings;
-    }
-
-    public int getMinimalAmountOfPosters() {
+    public int getMinimalAmountOfPosters(Building[] buildings) {
         int minimalAmountOfPosters = 0;
         Deque<Building> posterStack = new ArrayDeque<>();
 
